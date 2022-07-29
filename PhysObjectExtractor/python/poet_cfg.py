@@ -38,8 +38,10 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 #---- Define the test source files to be read using the xrootd protocol (root://), or local files (file:)
 process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(
 	'filenamehere'
-        )
-
+))
+			   
+if isData:
+			    
     #---- Apply the data quality JSON file filter. This example is for 2015 data
     #---- It needs to be done after the process.source definition
     #---- Make sure the location of the file agrees with your setup
