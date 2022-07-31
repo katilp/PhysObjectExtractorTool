@@ -43,6 +43,9 @@ l = eval(sys.argv[3])
 process.source = cms.Source("PoolSource",
   fileNames = cms.untracked.vstring(*files[f:l])
 )
+print(f)
+print(l)
+print(*files[f:l])
 
 			   
 if isData:
