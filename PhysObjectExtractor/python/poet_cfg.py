@@ -35,10 +35,15 @@ process.load("TrackingTools/TransientTrack/TransientTrackBuilder_cfi")
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
-#---- Define the test source files to be read using the xrootd protocol (root://), or local files (file:)
-process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring(
-	'filenamehere'
-))
+#---- Define the test source files to be read using the xrootd protocol, requires file list as input (/mnt/vol/files_recid.txt) and first and last file numbers
+fileindex = eval(sys.argv[5])
+files = open(fileindex, "r").read().splitlines()
+f = eval(sys.argv[4])
+l = eval(sys.argv[3])
+process.source = cms.Source("PoolSource",
+  fileNames = cms.untracked.vstring(*files[f:l])
+)
+
 			   
 if isData:
 			    
