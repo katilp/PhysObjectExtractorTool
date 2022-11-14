@@ -24,6 +24,8 @@ if len(sys.argv) > 3:
 else:
     doPat = False
 
+doPat = True # force to PAT for condition data test
+
 
 process = cms.Process("POET")
 
