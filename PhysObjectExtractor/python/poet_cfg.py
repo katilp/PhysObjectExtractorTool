@@ -77,7 +77,8 @@ process.source = cms.Source("PoolSource",
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.Services_cff')
 #---- Uncomment and arrange a line like this if you are getting access to the conditions database through CVMFS snapshot files (requires installing CVMFS client)
-#process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/FT53_V21A_AN6_FULL.db')
+if isData: process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/FT53_V21A_AN6_FULL.db')
+else: process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/START53_V27.db')	
 #---- The global tag must correspond to the needed epoch (comment out if no conditions needed)
 if isData: process.GlobalTag.globaltag = 'FT53_V21A_AN6::All'
 else: process.GlobalTag.globaltag = "START53_V27::All"
