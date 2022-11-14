@@ -84,7 +84,7 @@ process.load('Configuration.StandardSequences.Services_cff')
 if isData: process.GlobalTag.connect = cms.string('sqlite_file:FT53_V21A_AN6_FULL.db') # for condition data test only
 else: process.GlobalTag.connect = cms.string('sqlite_file:START53_V27.db')	       # for condition data test only
 #---- The global tag must correspond to the needed epoch (comment out if no conditions needed)
-if isData: process.GlobalTag.globaltag = 'FT53_V21A_AN6::All'
+if isData: process.GlobalTag.globaltag = 'FT53_V21A_AN6_FULL::All'
 else: process.GlobalTag.globaltag = "START53_V27::All"
 #---- If the container has local DB files available, uncomment lines like the ones below
 #---- instead of the corresponding lines above
