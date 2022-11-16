@@ -27,8 +27,8 @@ process.ak5 = cms.EDAnalyzer('JetCorrectorDBReader',
                              createTextFile=cms.untracked.bool(True))
 
 if isData:
-    process.ak5.globalTag = cms.untracked.string('FT53_V21A_AN6')
+    process.ak5.globalTag = cms.untracked.string('FT_53_LV5_AN1')
 else:
-    process.ak5.globalTag = cms.untracked.string('START53_V27')
+    process.ak5.globalTag = cms.untracked.string('START53_LV6A1')
 
 process.p = cms.Path(process.ak5)
