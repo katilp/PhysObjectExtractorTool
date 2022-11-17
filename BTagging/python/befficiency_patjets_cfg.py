@@ -35,6 +35,7 @@ process.source = cms.Source("PoolSource",
 # Set global tag
 process.load('Configuration.StandardSequences.Services_cff')
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.GlobalTag.connect = cms.string('sqlite_file:START53_V27.db')	       # for condition data test only
 process.GlobalTag.globaltag = "START53_V27::All"
 
 # Load PAT configs and build some light sequences
