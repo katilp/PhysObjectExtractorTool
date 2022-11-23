@@ -10,7 +10,7 @@ jobs:
     name: PhysObjectExtractor test - plain docker
     steps:
       # chmod of the script before getting to the container
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Prepare
         run: |
           mkdir outputs
@@ -23,7 +23,7 @@ jobs:
           cp *.root outputs
       # upload output file
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: output
           path: outputs/
