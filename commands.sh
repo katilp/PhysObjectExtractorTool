@@ -9,7 +9,7 @@ if [ -z "$4" ]; then doPat=False; else doPat=$4; fi
 set -e
 
 # For the plain github action with docker, the area would be available in /mnt/vol
-if $runas=github
+if [ $runas = github ]
 then
   sudo chown $USER /mnt/vol
   cp -r /mnt/vol PhysObjectExtractorTool
@@ -24,7 +24,7 @@ scram b
 # sed -i "s/process.GlobalTag.connect/#process.GlobalTag.connect/g" python/poet_cfg.py
 cmsRun $config $isData $doPat
 
-if $runas=github
+if [ $runas = github ]
 then
   cp *.root /mnt/vol/
   echo ls -l /mnt/vol
