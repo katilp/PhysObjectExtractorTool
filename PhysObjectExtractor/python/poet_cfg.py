@@ -49,7 +49,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 #---- python cernopendata-client download-files --recid 6004 --filter-range 1-1
 #---- For running over larger number of files, comment out this section and use/uncomment the FileUtils infrastructure below
 if isData: 
-	sourceFile='root://eospublic.cern.ch//eos/opendata/cms/Run2011A/DoubleMu/AOD/12Oct2013-v1/10000/000D143E-9535-E311-B88B-002618943934.root'
+	sourceFile='root://eospublic.cern.ch//eos/opendata/cms/Run2011A/DoubleMu/AOD/12Oct2013-v1/10000/FEF53876-9235-E311-B582-0026189437ED.root'
 else: 
 	sourceFile='root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2011/Summer11LegDR/ZZTo2e2mu_mll4_7TeV-powheg-pythia6/AODSIM/PU_S13_START53_LV6-v1/00000/0A571FF3-6392-E411-AB3D-0025904B12FC.root'
 process.source = cms.Source("PoolSource",
