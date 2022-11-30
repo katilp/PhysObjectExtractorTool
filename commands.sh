@@ -21,7 +21,9 @@ cd PhysObjectExtractorTool
 cd PhysObjectExtractor
 scram b
 
-# sed -i "s/process.GlobalTag.connect/#process.GlobalTag.connect/g" python/poet_cfg.py
+echo in:
+pwd
+echo Going to run $config with isData $isData and doPat $doPat
 cmsRun $config $isData $doPat
 
 if [ $runas = github ]
