@@ -14,7 +14,7 @@ then
   sudo chown $USER /mnt/vol
   cp -r /mnt/vol PhysObjectExtractorTool
 else
-  git clone -b 2011 https://github.com/cms-opendata-analyses/PhysObjectExtractorTool.git
+  git clone -b 2011 https://github.com/katilp/PhysObjectExtractorTool.git
 fi
 
 cd PhysObjectExtractorTool
