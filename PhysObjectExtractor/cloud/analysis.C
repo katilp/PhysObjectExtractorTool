@@ -1,7 +1,7 @@
 {
 
 // Open the input file
-TFile* infile = new TFile("myoutput.root");
+TFile* infile = new TFile("poetoutput.root");
 
 // Get some of the TTree objects
 TDirectoryFile* electrons = (TDirectoryFile*)infile->Get("myelectrons");
