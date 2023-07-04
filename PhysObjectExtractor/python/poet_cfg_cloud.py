@@ -37,6 +37,7 @@ process.MessageLogger.cerr.INFO = cms.untracked.PSet(
     limit=cms.untracked.int32(-1))
 process.options = cms.untracked.PSet(wantSummary=cms.untracked.bool(True))
 
+print("Before maxEvents")
 #---- Select the maximum number of events to process (if -1, run over all events)
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 
@@ -45,6 +46,7 @@ process.load("TrackingTools/TransientTrack/TransientTrackBuilder_cfi")
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
+print("Before opening file listing"
 #---- Define the test source files to be read using the xrootd protocol, requires file list as input (/mnt/vol/files_recid.txt) and first and last file numbers
 fileindex = eval(sys.argv[5])
 files = open(fileindex, "r").read().splitlines()
