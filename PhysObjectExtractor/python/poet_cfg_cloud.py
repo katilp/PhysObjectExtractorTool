@@ -1,17 +1,18 @@
-## This is a copy of the standard poet_cfg.py file with the addition of input file parameters
-## for easier use in a cloud environment
-## Arguments:
-## - isData True of False 
-## - first file number
-## - last file number 
-## - file listing name
-##
 import FWCore.ParameterSet.Config as cms
 import FWCore.Utilities.FileUtils as FileUtils
 import FWCore.PythonUtilities.LumiList as LumiList
 import FWCore.ParameterSet.Types as CfgTypes
 import sys
+import os
 
+# This is a copy of the standard poet_cfg.py file with the addition of input file parameters
+# for easier use in a cloud environment
+# Arguments:
+# - isData True of False 
+# - first file number
+# - last file number 
+# - file listing name
+#----
 #---- sys.argv takes the parameters given as input cmsRun PhysObjectExtractor/python/poet_cfg.py <isData (default=False)>
 #----  e.g: cmsRun PhysObjectExtractor/python/poet_cfg.py True
 #---- NB the first two parameters are always "cmsRun" and the config file name
@@ -49,7 +50,7 @@ fileindex = eval(sys.argv[5])
 files = open(fileindex, "r").read().splitlines()
 f = eval(sys.argv[3])
 l = eval(sys.argv[4])
-print(files[f-1:l])
+print(files[f:l])
 process.source = cms.Source("PoolSource",
   fileNames = cms.untracked.vstring(files[f-1:l])
 )
