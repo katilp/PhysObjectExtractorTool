@@ -46,7 +46,7 @@ process.load("TrackingTools/TransientTrack/TransientTrackBuilder_cfi")
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
-print("Before opening file listing"
+print("Before opening file listing")
 #---- Define the test source files to be read using the xrootd protocol, requires file list as input (/mnt/vol/files_recid.txt) and first and last file numbers
 fileindex = eval(sys.argv[5])
 files = open(fileindex, "r").read().splitlines()
