@@ -23,6 +23,7 @@ else:
     isData = False
 isMC = True
 if isData: isMC = False
+print("Before process")	  
 
 process = cms.Process("POET")
 
@@ -48,6 +49,7 @@ fileindex = eval(sys.argv[5])
 files = open(fileindex, "r").read().splitlines()
 f = eval(sys.argv[3])
 l = eval(sys.argv[4])
+print(files[f-1:l])
 process.source = cms.Source("PoolSource",
   fileNames = cms.untracked.vstring(files[f-1:l])
 )
