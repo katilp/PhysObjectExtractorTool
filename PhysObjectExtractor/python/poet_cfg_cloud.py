@@ -12,16 +12,17 @@ import os
 # - first file number
 # - last file number 
 # - file listing name
+# - number of events
 #----
 #---- sys.argv takes the parameters given as input cmsRun PhysObjectExtractor/python/poet_cfg.py <isData (default=False)>
 #----  e.g: cmsRun PhysObjectExtractor/python/poet_cfg.py True
 #---- NB the first two parameters are always "cmsRun" and the config file name
 #---- Work with data (if False, assumed MC simulations)
 #---- This needs to be in agreement with the input files/datasets below.
-if len(sys.argv) > 2:
-    isData = eval(sys.argv[2])
-else:
-    isData = False
+if less(sys.argv) < 6: 
+	print("Error: too few arguments. Arguments are: isData (True/False), first file, last file, file list, number of events")
+	sys.exit(1)
+isData = eval(sys.argv[2])
 isMC = True
 if isData: isMC = False
 
@@ -37,7 +38,8 @@ process.MessageLogger.cerr.INFO = cms.untracked.PSet(
 process.options = cms.untracked.PSet(wantSummary=cms.untracked.bool(True))
 
 #---- Select the maximum number of events to process (if -1, run over all events)
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
+nevents = eval(sys.argv[6])
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(nevents) )
 
 #---- Needed configuration for dealing with transient tracks if required
 process.load("TrackingTools/TransientTrack/TransientTrackBuilder_cfi")
