@@ -19,7 +19,7 @@ import os
 #---- NB the first two parameters are always "cmsRun" and the config file name
 #---- Work with data (if False, assumed MC simulations)
 #---- This needs to be in agreement with the input files/datasets below.
-if less(sys.argv) < 6: 
+if len(sys.argv) < 6: 
 	print("Error: too few arguments. Arguments are: isData (True/False), first file, last file, file list, number of events")
 	sys.exit(1)
 isData = eval(sys.argv[2])
