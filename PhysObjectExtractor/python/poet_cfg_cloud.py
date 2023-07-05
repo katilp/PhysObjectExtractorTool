@@ -13,15 +13,17 @@ import os
 # - last file number 
 # - file listing name
 # - number of events
+# 
+# If you do not give them all, you will get:
+##### Exception Message:
+##### python encountered the error: <type 'exceptions.IndexError'>
+##### list index out of range
 #----
 #---- sys.argv takes the parameters given as input cmsRun PhysObjectExtractor/python/poet_cfg.py <isData (default=False)>
 #----  e.g: cmsRun PhysObjectExtractor/python/poet_cfg.py True
 #---- NB the first two parameters are always "cmsRun" and the config file name
 #---- Work with data (if False, assumed MC simulations)
 #---- This needs to be in agreement with the input files/datasets below.
-if len(sys.argv) < 6: 
-	print("Error: too few arguments. Arguments are: isData (True/False), first file, last file, file list, number of events")
-	sys.exit(1)
 isData = eval(sys.argv[2])
 isMC = True
 if isData: isMC = False
